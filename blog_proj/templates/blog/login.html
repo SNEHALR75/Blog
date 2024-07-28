@@ -1,0 +1,40 @@
+{% extends 'layout.html' %}
+{% load crispy_forms_tags %}
+
+{% block heading %}
+<h1 style="text-align:center" class="text-primary">Login Form</h1>
+{% endblock %}
+
+{% block content %}
+<div class="w-50 mx-auto border solid 2px bg-secondary p-4 m-2=4 rounded-4 fw-bold">
+      <form method="post">
+        {% csrf_token %}
+
+  <!-- Email input -->
+  <div data-mdb-input-init class="form-outline mb-4">
+    <input type="text" id="form2Example1" class="form-control" name="uname" />
+    <label class="form-label" for="form2Example1">User Name</label>
+  </div>
+
+  <!-- Password input -->
+  <div data-mdb-input-init class="form-outline mb-4">
+    <input type="password" id="form2Example2" class="form-control" name="ps" />
+    <label class="form-label" for="form2Example2">Password</label>
+  </div>
+
+  <!-- 2 column grid layout for inline styling -->
+  <div class="row mb-4">
+    <div class="col d-flex justify-content-center">
+      <!-- Checkbox -->
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="form2Example31" checked />
+        <label class="form-check-label" for="form2Example31"> Remember me </label>
+      </div>
+    </div>
+<button class="btn btn-primary" type="submit">Submit</button>
+
+  </div>
+</form>
+
+</div>
+{% endblock %}
